@@ -52,14 +52,37 @@ The editorial workflow is sequential. Each stage builds on the one before it. Do
                          │  guide adherence        │
                          └────────────┬────────────┘
                                       │
-                                      ▼
-                         ┌────────────────────────┐
-                         │     editorial-proof     │
-                         │  Stage 5: Final layout  │
-                         │  check — orphans,       │
-                         │  widows, broken links   │
-                         └────────────────────────┘
+                          ┌───────────┴───────────┐
+                          │                       │
+                          ▼                       ▼
+              ┌─────────────────────┐   ┌──────────────────┐
+              │ editorial-typeset-  │   │  editorial-proof  │
+              │      ting           │   │  Stage 5/6 (non- │
+              │  Stage 5 (print     │   │  print): final    │
+              │  books only):       │   │  layout check     │
+              │  markdown → LaTeX   │   └──────────────────┘
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │     latex-book      │
+              │  Quality gate:      │
+              │  print audit before │
+              │  proof              │
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │   editorial-proof   │
+              │  Stage 6 (print     │
+              │  books): final      │
+              │  PDF check          │
+              └─────────────────────┘
 ```
+
+**For print books:** all 6 stages apply — including typesetting, the latex-book quality gate, and proof.
+
+**For essays, articles, and white papers:** stop after `editorial-copy`. Skip `editorial-typesetting` and `latex-book`. Run `editorial-proof` directly against the final formatted document.
 
 Every skill also works standalone. You can run `/editorial-line` on a single chapter without having done a structural edit. The skills are designed for the full workflow but are independently useful.
 
@@ -72,7 +95,9 @@ Every skill also works standalone. You can run `/editorial-line` on a single cha
 | [editorial-development](skills/editorial-development/) | 2 | Narrative arc, voice authority, modular flow — chapter-level movement and readability |
 | [editorial-line](skills/editorial-line/) | 3 | Sentence-level craft, word choice, rhythm, persuasive impact |
 | [editorial-copy](skills/editorial-copy/) | 4 | Grammar, punctuation, style guide adherence, consistency throughout |
-| [editorial-proof](skills/editorial-proof/) | 5 | Final check after layout — orphans, widows, typos from layout, broken links |
+| [editorial-typesetting](skills/editorial-typesetting/) | 5 *(print books only)* | Converts markdown to print-ready LaTeX using memoir/XeLaTeX — trim size, margins, fonts, drop caps, running heads |
+| [latex-book](skills/latex-book/) | 5 companion | Print quality audit — font embedding, PDF/X compliance, widow penalties, compile log; quality gate before proof |
+| [editorial-proof](skills/editorial-proof/) | 6 | Final check after layout — orphans, widows, typos from layout, broken links |
 
 ## Installation
 
@@ -121,14 +146,26 @@ Run the context skill first. It asks about the work, the audience, the style gui
 
 ### Run the Full Workflow
 
-Work through the stages in order:
+**For print books:**
 
 ```
-/editorial-structural   ← Does the argument hold? Is the data right?
-/editorial-development  ← Is it organized well? Is the tone right?
-/editorial-line         ← Is every sentence doing its job?
-/editorial-copy         ← Is it grammatically correct? Style guide compliant?
-/editorial-proof        ← Final check before publishing
+/editorial-structural    ← Does the argument hold? Is the data right?
+/editorial-development   ← Is it organized well? Is the tone right?
+/editorial-line          ← Is every sentence doing its job?
+/editorial-copy          ← Is it grammatically correct? Style guide compliant?
+/editorial-typesetting   ← Convert markdown to print-ready LaTeX
+/latex-book              ← Quality audit before proof (font embedding, PDF/X, widows)
+/editorial-proof         ← Final check of the typeset PDF
+```
+
+**For essays, articles, and white papers:**
+
+```
+/editorial-structural    ← Does the argument hold? Is the data right?
+/editorial-development   ← Is it organized well? Is the tone right?
+/editorial-line          ← Is every sentence doing its job?
+/editorial-copy          ← Is it grammatically correct? Style guide compliant?
+/editorial-proof         ← Final check before publishing
 ```
 
 ### Or Jump to What You Need
@@ -147,6 +184,12 @@ The skills work standalone. Invoke only what's relevant:
 
 "Check this against Chicago style"
 → Uses editorial-copy
+
+"Convert this to LaTeX for printing"
+→ Uses editorial-typesetting
+
+"Check my LaTeX file before I submit to KDP"
+→ Uses latex-book
 
 "Final proofread before we go to print"
 → Uses editorial-proof
@@ -172,6 +215,12 @@ You: Tighten the prose in the opening section.
 
 You: Run a Chicago style pass on the full manuscript.
 → /editorial-copy reads the context, applies Chicago rules throughout
+
+You: Convert the manuscript to print-ready LaTeX for KDP.
+→ /editorial-typesetting generates the full memoir/XeLaTeX project
+
+You: Check the generated LaTeX before we go to proof.
+→ /latex-book audits for font embedding, PDF/X, widows, compile log
 
 You: Final check before the PDF goes to the printer.
 → /editorial-proof catches layout artifacts only — no content changes
@@ -263,7 +312,43 @@ The technical pass. Correctness and consistency by the rules of the applicable s
 
 ---
 
-### editorial-proof — Stage 5
+### editorial-typesetting — Stage 5 *(print books only)*
+
+Converts copy-edited markdown into a complete, print-ready LaTeX project using the memoir document class and XeLaTeX. This is not a template — it generates a full, customized preamble and source files from scratch, based on 29 intake questions covering every design decision that gets baked into the layout.
+
+**Covers:**
+- Page geometry — trim size, stock size, bleed, gutter (binding-type lookup table), margins, safe zone
+- Typography — font selection and fontspec configuration (including fake bold/italic detection), microtype, drop caps
+- Chapter and section styling — chapter title style, section break style, drop caps, heading hierarchy
+- Running heads and page numbers — verso/recto content, case, position, suppression rules
+- Front matter — half-title, title page, copyright page, dedication, epigraph, TOC
+- Full markdown-to-LaTeX conversion — inline formatting, special characters, block elements, figures, tables, footnotes
+- Core preamble — pdfx (PDF/X compliance, loaded before hyperref), widow/orphan/hyphenation penalties, `\raggedbottom`, `\aliaspagestyle` calls, babel, csquotes
+
+**Deliverable:** A complete LaTeX project directory (`main.tex`, `preamble.tex`, `frontmatter/`, `chapters/`, `backmatter/`) ready to compile with `xelatex main.tex && xelatex main.tex`. Also populates the Typesetting Decision Record in `.agents/editorial-context.md`.
+
+**Do this after:** Copy editing. **Before:** latex-book quality gate, then editorial-proof.
+
+---
+
+### latex-book — Stage 5 companion *(print books only)*
+
+The quality gate between typesetting and proof. Audits the generated `.tex` files and compiled PDF against print production requirements. Does not generate LaTeX — it reads what `editorial-typesetting` produced and finds everything that would cause a print rejection or a visible error in the finished book.
+
+**Covers:**
+- memoir class correctness — `\checkandfixthelayout` placement, page style aliases, `\frontmatter`/`\mainmatter`/`\backmatter` sequence, `openright` and blank pages, `\raggedbottom` vs. `\flushbottom`
+- XeLaTeX/fontspec correctness — fake bold/italic detection, ligature settings, microtype options, `csquotes` for quotation marks
+- Typography quality — widow/orphan penalties, consecutive hyphenation, overfull `\hbox` warnings, underfull `\vbox`
+- Print-ready PDF requirements — font embedding (`pdffonts` verification), PDF/X compliance, color mode, crop marks, image resolution
+- Compile log — every error and print-relevant warning categorized
+
+**Deliverable:** A TX#-prefixed issue list in `.agents/editorial-context.md`, each entry including the specific fix. After all TX# issues are resolved, runs the PRINT-PREFLIGHT.md checklist before declaring the file print-ready.
+
+**Do this after:** editorial-typesetting compiles cleanly. **Before:** editorial-proof.
+
+---
+
+### editorial-proof — Stage 6
 
 The final check. Only runs after the text is in its final laid-out format. This is not editing — it is quality control on the production.
 
@@ -279,7 +364,7 @@ The final check. Only runs after the text is in its final laid-out format. This 
 
 **Deliverable:** A marked-up proof, a list of flags for author decision, a brief summary of error categories.
 
-**Do this after:** Copy editing and final layout. This is the last step.
+**For print books — do this after:** `latex-book` clears all TX# issues. **For other formats — do this after:** Copy editing and final layout. This is the last step.
 
 ## The Shared Context Pattern
 
@@ -296,6 +381,7 @@ This means you can work across multiple sessions on the same project without los
 ## Works Well With
 
 - **stop-slop** — Catches AI writing patterns in any prose drafted during editing. Automatically invoked during `editorial-line` when drafting model rewrites.
+- **latex-book** — Included in this repository as a companion to `editorial-typesetting`. Run it after every typesetting generation before moving to proof.
 
 ## What These Skills Are For
 
