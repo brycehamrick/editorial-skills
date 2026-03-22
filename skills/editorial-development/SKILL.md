@@ -1,372 +1,223 @@
 ---
 name: editorial-development
-description: Developmental editing for nonfiction books and proposals. Use when assessing manuscripts, writing editorial reports, restructuring arguments, or working through any phase of developmental editing with an author.
+description: Developmental editing of nonfiction writing — chapter-level flow, narrative arc, voice authority, and modular structure. Use when assessing how a reader moves through the material, whether the writing sounds like an expert in command of the subject, whether sections are ordered from problem to solution to action, or whether the skim-path works for a business audience. Also use when the user mentions "developmental edit," "does this flow," "is the narrative arc right," "does this sound authoritative," "are my headers right," "skim-path," "transitions," "pacing," or "does this read well." Second stage of the editorial workflow — after editorial-structural, before editorial-line.
 ---
 
 # Developmental Editing
 
-Act as a seasoned developmental editor with deep experience in nonfiction trade and academic publishing. You work in the tradition of Scott Norton's framework from *Developmental Editing* (University of Chicago Press): your job is to find the book inside the manuscript, then help the author write it.
+**Check for editorial context first:** If `.agents/editorial-context.md` exists, read it before beginning.
 
-Developmental editing is not copyediting. You work at the level of concept, structure, argument, voice, and pacing — before sentence-level polish. Your interventions are always in service of the author's intent, not your own.
+## Intake
 
-## Editor's Orientation
+Read the context file. Then ask for anything not already captured — do not ask about what's already there.
 
-- The author knows the subject. You know the book.
-- Approach every manuscript with an open mind and a genuine interest in the subject as presented.
-- Communicate tactfully. Frame problems as possibilities, not failures.
-- Offer options, not mandates. Authors accept or reject revision plans.
-- Preserve the author's voice at every phase. Your rewrites are demonstrations, not replacements.
-- The test of a good editorial intervention is whether the author recognizes it as an improvement of their own work.
+**Required — cannot begin without these:**
+1. Who is the intended audience? (role, domain familiarity, reading context — needed to evaluate Level of Address)
+2. What is the thesis, in one sentence? (Should come from the structural stage; if the structural edit hasn't been done, note it and ask the author to state the thesis before proceeding.)
+3. What voice register is this work aiming for? Give the user options if they're unsure: expert peer (author and reader are colleagues), accessible expert (author knows more than the reader but writes for a general professional audience), practitioner (how-to for a working professional), narrative nonfiction (storytelling frame for a general reader).
 
-## The Central Diagnostic Problem
+**Required for business writing:**
+4. Who is the primary reader — an executive who will skim, a practitioner who will read closely, or a mixed audience? (Drives the skim-path and arc-reversal assessments.)
 
-Before entering any phase, internalize this: **the most common problem in nonfiction drafts is too many concepts vying for the reader's attention.** Norton returns to this in Chapters 1, 2, and 3 — it is not one issue among many, it is the primary presenting symptom of manuscripts that aren't yet books. An author may have five compelling ideas where one would suffice. Your job across the first three phases is to find the one that should win, and help the author subordinate the rest to it.
+**Helpful if not already captured:**
+5. Has the editorial-structural stage been completed? If structural issues are still open, note them — developmental editing should not paper over a broken structure.
+6. Are there specific sections the author already finds awkward, disconnected, or off in tone?
+7. Is there a model text — a book, report, or article that exemplifies the right voice and flow for this piece?
 
-## The Ten-Phase Framework
-
-Work through these phases in order for a full editorial engagement, or enter at the appropriate phase for targeted work. Each phase builds on the prior ones.
+Record all answers in `.agents/editorial-context.md` before running the assessment.
 
 ---
 
-### Phase 1: Concept
+You are checking the muscles and connective tissue. The skeleton has been assessed (editorial-structural). The thesis is established, the chapters are in the right order, and the gaps have been identified. Now you are asking: how does the reader move through this? Does the writing sound like someone who knows what they're talking about? Do the chapters carry the reader from problem to solution to action?
 
-**Goal:** Identify the central concept and ensure it can sustain a book.
+Act as a developmental editor in the tradition of Scott Norton's *Developmental Editing* (University of Chicago Press), applying his framework for Pacing, Transitions, and Vignettes to evaluate chapter-level flow before sentence-level editing begins.
+
+Do not touch sentences. Do not polish prose. Do not correct grammar. That work belongs to later stages. Here, you are asking only: does the reader move through this piece the way the author intends?
+
+---
+
+## The Central Concern
+
+A structurally sound piece — thesis clear, chapters in order, gaps identified — can still fail the reader at the chapter level. The argument may be correct but inert. Sections may be complete but unnavigable. The author may have the credentials but not the voice of someone who has earned the right to speak on the subject.
+
+Developmental editing addresses the gap between a correct manuscript and a readable one.
+
+---
+
+## Three-Part Developmental Assessment
+
+### Part 1: Narrative Arc
+
+**Norton's focus:** The reader's journey through the argument — from problem to solution to action.
+
+Even in nonfiction and business writing, there is a story. The reader arrives with a problem, moves through a sequence of increasing understanding, and leaves with something they can act on. If the arc is broken — if the piece jumps to solutions before establishing the problem, or leaves the reader without a clear action — the writing fails regardless of its structural soundness.
+
+**The Problem → Solution → Action arc:**
+
+- **Problem:** Does the piece establish clearly and early what is at stake? Does the reader understand what they're missing, what's going wrong, or what question needs answering before the author begins to answer it? A piece that skips directly to solutions leaves the reader without motivation to keep reading.
+- **Solution:** Does the evidence, argument, and case material build toward a clear resolution? Is there a discernible moment when the reader has enough to understand what the author is recommending or claiming?
+- **Action:** Does the piece leave the reader with something to do, believe, or decide? Business writing that ends without an implied action is incomplete. Even in essays and books, the reader should close the piece knowing what is being asked of them.
 
 **Diagnostic questions:**
-- What is this book fundamentally about — in one sentence?
-- How many distinct concepts are competing for center stage? Which one should win?
-- Does the stated concept hold up against the full range of material, or does the manuscript keep drifting toward a competing concept?
-- Who is the intended reader? (Not "general readers" — be specific: what do they know, what do they want, why would they pick this up?)
-- Where does this book sit on the publisher's list, and what does it need to do or be to justify that position?
-- Is the concept generative enough to fill a book, or should it be an essay? Too large to handle in one volume?
+- At what point does the piece establish the problem the reader is being invited to solve?
+- Is that problem compelling and specific enough to motivate continued reading?
+- Does the solution emerge from the argument, or is it announced from outside it?
+- What is the reader supposed to do, believe, or decide after reading this? Is that made clear?
+- Are there sections that appear before their moment — solutions before the problem is felt, actions before the solution is credible?
 
-**Deliverable:** A one-paragraph concept statement: the core idea, the audience, and the book's position. This becomes the editorial north star.
+**Business writing note — the inverted arc:** In executive-facing documents, the arc often runs in reverse: Action first (the recommendation), Solution summarized (the evidence), Problem acknowledged (the context). If the audience is decision-makers who need the bottom line before the argument, flag an arc reversal and recommend restructuring the flow accordingly. This is distinct from the structural note about moving the conclusion forward — here the concern is whether the reader can navigate the arc in either direction without losing the thread.
+
+**Deliverable from Part 1:** A narrative arc assessment — where the Problem, Solution, and Action are located in the current draft, whether the arc is intact or broken, and where the sequence needs reordering or expansion.
 
 ---
 
-### Phase 2: Content
+### Part 2: Voice and Authority
 
-**Goal:** Map all the material and identify what should take center stage.
+**Norton's focus:** Level of Address — ensuring the writing sounds like an expert in full command of the subject, calibrated to the intended reader.
 
-**Technique — Content Map:**
-1. Read the full manuscript (or proposal + sample chapters) without marking. Get the shape.
-2. List every distinct concept, argument, case study, example, and narrative thread.
-3. Group related material. Note what's missing, what's redundant, and what's underdeveloped.
-4. Identify the single concept that, if placed at the center, would make the rest cohere.
+Voice authority is not about style. It is about whether the author has found the register that earns the reader's trust. Norton calls this "Level of Address": the author has to be speaking from the right position relative to the reader. Too elevated and the reader feels condescended to. Too familiar and the author loses the gravitas the subject demands. Too hedged and the reader doesn't believe the author knows what they're talking about.
+
+**Three failure modes:**
+
+**Talking down to peers:** The author explains what the intended reader already knows. In business writing aimed at C-suite or industry audiences, this often shows up as over-defining standard terms, walking through steps that the reader performs daily, or adding caveats to observations that are uncontroversial in the field. The reader feels patronized and disengages.
+
+**Talking over clients:** The author assumes knowledge the reader doesn't have. Jargon without definition, case-specific reference without context, acronyms without expansion. The reader feels lost and distrusts the author's judgment about what needs explaining.
+
+**Hedging authority away:** The author qualifies every claim to the point of saying nothing. "It could be argued that," "in some cases," "this may suggest." Appropriate epistemic humility is a virtue; reflexive hedging destroys credibility. The test: is this qualification doing intellectual work, or is it rhetorical timidity?
+
+**Calibration standard:** The author should sound like the most knowledgeable person in the room — not the one who knows the most, but the one the others would turn to when the stakes are high. Confident but not dismissive. Clear but not simplistic. Authoritative but not closed to challenge.
+
+**Tone lapses:** The full table of tone lapses is in [references/TONE-LAPSES.md](references/TONE-LAPSES.md). At this stage, flag patterns rather than fixing sentences — that belongs to editorial-line. Identify where the voice authority breaks down and what type of failure it represents.
 
 **Diagnostic questions:**
-- What is the richest, most original material in this manuscript?
-- How many distinct concepts are present? Which one, if centered, would make the others cohere as support rather than competition?
-- What material is present primarily out of habit or convention, not necessity?
-- Is the content mix right for the intended reader — too technical, too basic, too anecdotal?
+- Does the writing sound like it was written by someone with real expertise in this area?
+- Where does the author hedge when they should assert?
+- Where does the author assert without earning it?
+- Is the author talking to the right reader — not too far above, not too far below?
+- Is the author's voice consistent throughout, or does it drift between sections?
+- Is there a gap between the author's actual authority (impressive) and the authority the prose projects (underconfident)?
 
-**First-time authors:** Authors who haven't published a book before often bury their best material — in footnotes, in hedges, in sub-clauses — because they distrust it or feel it needs more support before being asserted. They also tend to over-explain methodology and under-explain implications. Look for the real argument hiding behind the defensive apparatus, and surface it.
-
-**Deliverable:** A content map: a summary paragraph for each major section or chapter, with editorial notes on what's working and what needs attention.
+**Deliverable from Part 2:** A voice authority assessment — Level of Address calibration, identified tone patterns, and flagged passages where authority breaks down (flagged by location and failure type, not rewritten).
 
 ---
 
-### Phase 3: Thesis
+### Part 3: Modular Flow
 
-**Goal:** Find and sharpen the hook statement — the sentence that sells the book and guides everything else.
+**Norton's focus:** Pacing, Transitions, and the structure of displayed matter — how sections are organized and navigable.
 
-**The thesis does double duty:**
-1. It drives the book's internal logic (the argument the author makes)
-2. It becomes the marketing hook (the line in the catalog copy, the flap, the author's elevator pitch)
+Business readers skim before they read. They scan sub-headers to decide whether to engage. If the skim-path doesn't hold together — if the headers don't tell a coherent secondary story, if the content under a header doesn't match what the header promised — the reader never commits to a close read.
 
-**Technique — Thesis Excavation:**
-- Read the introduction closely. Authors often bury the real thesis in paragraph five or seven.
-- Ask: if you had to reduce this book to one claim — the thing the author is saying that isn't obvious, that someone could disagree with — what is it?
-- Test the thesis against the table of contents. Does each chapter advance, complicate, or demonstrate that claim?
+Modular flow has three components:
 
-**The market/audience tension:** Authors write for readers who know the subject. Marketers write for buyers who don't yet. The working thesis needs to speak to both without betraying either.
+**Sub-header integrity:** Do the headers accurately describe the content beneath them? A header makes a promise. If the promise isn't kept — if the section drifts from its announced topic, or if the header is so vague it promises nothing — the skim-path breaks. Every header should be a miniature thesis.
 
-**Working title:** Develops alongside the thesis. A strong nonfiction title makes a claim or promises an experience. Test titles against the thesis: does the title deliver on the book's actual argument?
+**The skim-path:** Read only the headers, in sequence. Does the skim-path tell a coherent, complete version of the argument? A business reader who only skims should come away with: (1) what the problem is, (2) what the recommendation is, and (3) what they need to do. If the skim-path doesn't deliver this, the document is failing a significant portion of its audience before they've read a word of body copy.
+
+**Section pacing and transitions:** Norton's framework addresses how quickly the argument moves and whether sections connect without rupture.
+
+- **Pacing:** Each section should move at a pace appropriate to what it's asking the reader to process. A section presenting a complex model needs room to breathe. A section summarizing background the reader likely knows can move faster. Mismatches — dwelling on minor points, sprinting through major ones — disrupt the reader's ability to gauge what matters.
+
+- **Transitions:** Gaps between sections are not just stylistic problems — they are argument problems. Types of gaps to identify:
+  - **Logical gap:** The argument skips a step the reader needs
+  - **Tonal gap:** The register shifts without warning
+  - **Conceptual gap:** A new term or framework appears without orientation
+  - **Sequencing gap:** The reader doesn't understand why this section follows the previous one
+
+  At this stage, flag the gap and characterize it. Do not write the transition — that is developmental prose work that edges into line editing. The author needs to know what is missing and why; they do the writing.
+
+**Vignettes:** Norton identifies vignettes — short illustrative scenes or case examples — as a structural unit, not just a stylistic choice. A well-placed vignette can do the work of three paragraphs of exposition. An out-of-place vignette breaks pace and confuses argument structure. Assess: are vignettes being used at the right structural moments? Are any missing where the argument has stayed abstract too long?
 
 **Diagnostic questions:**
-- Is the thesis arguable? (If no reasonable person could disagree, it's not a thesis.)
-- Is the thesis specific? ("Leadership matters" is not a thesis.)
-- Does the thesis appear clearly, early in the manuscript?
-- Is there a gap between what the author thinks the thesis is and what the manuscript actually argues?
+- Do the headers, read in sequence, tell the argument?
+- Does each header accurately describe the content beneath it?
+- Would a reader who skims only headers and vignettes understand the piece's core argument and recommendation?
+- Where does the pacing misalign — where is the piece too slow for the reader's needs, too fast for the argument's demands?
+- Where are the transitions broken, and what type of gap is present?
+- Where would a vignette unlock an abstract section? Where is a vignette present but out of place?
 
-**Deliverable:** A draft thesis statement (1–3 sentences) and 3–5 working title options with brief rationale for each.
-
----
-
-### Phase 4: Narrative
-
-**Goal:** Choose the timeline strategy that best serves the material.
-
-**Timeline options:**
-
-| Strategy | When to use |
-|----------|-------------|
-| Linear | Chronological story; causation is the argument; reader needs to feel time passing |
-| Reverse | Revelation first, then backstory; creates immediate dramatic question |
-| Parallel | Two or more timelines that illuminate each other; thematic juxtaposition |
-| Rotating | Multiple POVs cycling; useful for systemic or ensemble stories |
-| Alternate outcomes | "What if" structure; good for counterfactual arguments |
-| Mosaic/episodic | Linked vignettes; appropriate when no single through-line dominates |
-
-**POV considerations:**
-- First person: proximity and authority; risks solipsism if subject is not the author's own life
-- Second person: reader implication; effective for prescriptive nonfiction but can feel coercive at book length
-- Third person: flexibility and range; requires the author to have done the reporting
-- Omniscient narrator: works in popular history and science; demands command of sources
-
-**Diagnostic questions:**
-- Does the narrative strategy serve the thesis or distract from it?
-- At what point does the reader need to understand the stakes? Is that moment well placed?
-- If linear: is there a propulsive question driving the reader forward?
-- If nonlinear: is there a strong enough anchor for the reader to track orientation?
-
-**Deliverable:** A narrative strategy recommendation with rationale and any structural alternatives the author should consider.
+**Deliverable from Part 3:** A modular flow assessment — skim-path evaluation, header integrity review, pacing notes by section, and a prioritized list of transition gaps (with gap type identified). Any recommendations for vignette placement or removal.
 
 ---
 
-### Phase 5: Exposition
+## Two-Phase Process
 
-**Goal:** Design how the argument is deployed through the text — the backbone of the book.
+This skill runs in two phases. Do not skip to Phase 2.
 
-Exposition is the author's voice making the argument directly to the reader. It is distinct from narrative (which shows) and evidence (which demonstrates). Good exposition thinks with the reader.
+**Phase 1 — Diagnostic (always first):**
+Read the work, run the full assessment, and write each discovered issue to `.agents/editorial-context.md` under a `## Development Issues` heading. Use this format for each entry:
 
-**Presentation approaches — brainstorm these for each major section:**
-- Problem/solution
-- Claim/evidence/analysis
-- Case study then principle
-- Principle then case study
-- Historical → present → implication
-- Competing views → synthesis
-- Question → failed answers → correct answer
+```
+### D[#] — [Brief descriptor]
+- **Location:** [Specific section, chapter, or passage]
+- **Issue:** [What the problem is — arc gap, voice failure, broken header, pacing mismatch, transition type]
+- **Why:** [What it costs — the reader's trust, the skim-path, the narrative momentum]
+```
 
-**Technique — Exposition Audit:**
-1. For each chapter, identify the expository spine: what claim is being made, and how is it advanced?
-2. Flag passages where exposition disappears and the chapter becomes a series of examples without connective argument.
-3. Flag passages where exposition crowds out evidence — the author asserting without showing.
-4. Check that each chapter's expository conclusion advances the book-level thesis, not just the chapter-level point.
+Do not offer fixes. Do not suggest rewrites. Do not propose alternative phrasings. The diagnostic is complete when all issues are documented in the context file.
 
-**Exposition/narrative interference:** After mapping the exposition, check for interference with the narrative structure established in Phase 4. Exposition that works logically may not work with the chosen timeline — a reverse timeline can't carry a claim-then-evidence structure the same way a linear one can. Flag any chapters where the expository pattern fights the narrative flow and propose a resolution before proceeding.
-
-**Diagnostic questions:**
-- Can you state what each chapter argues in one sentence? If not, the expository spine is missing.
-- Does the exposition lead the reader or follow the evidence?
-- Is the author's voice present in the exposition, or has it gone neutral and impersonal?
-- Does the expository structure work with — or against — the narrative timeline chosen in Phase 4?
-
-**Deliverable:** An exposition map: one sentence per chapter stating the expository claim, with notes on where the argument is underdeveloped or overloaded, and any exposition/narrative interference issues flagged.
+**Phase 2 — Resolution (after the user reviews):**
+Present a brief summary of what was found. The user then chooses:
+- **Edit manually** — They revise, then ask whether the change satisfies the original issue. Evaluate and respond.
+- **Ask Claude to revise** — Work through each issue in sequence, proposing a specific resolution. Use the `stop-slop` skill when drafting any new prose.
 
 ---
 
-### Phase 6: Plan
+## Workflow
 
-**Goal:** Translate the editorial analysis into a revision blueprint the author can work from.
-
-The editorial report captures all prior phase work and proposes specific revisions. It must be:
-- **Specific:** Not "the middle section drags" but "Chapters 4–6 cover overlapping ground; consider consolidating the material on X into Chapter 4 and cutting the current Chapter 6 entirely."
-- **Prioritized:** Lead with structural issues, then argument issues, then voice and style.
-- **Tactful:** Frame problems as unmet potential, not failures.
-- **Negotiable:** The author may accept, reject, or modify any element. Your job is to open a conversation.
-
-**Structure of the editorial report:**
-
-1. **Overview paragraph:** What the book is doing well; the central opportunity; the editorial approach. Sets the tone.
-2. **Structural issues:** Argument sequence, chapter organization, missing or redundant material.
-3. **Chapter-by-chapter notes:** Specific, actionable notes on each chapter.
-4. **Voice and style:** Patterns worth addressing (see Phase 9).
-5. **Displayed matter:** Chapter heads, sidebars, illustrations, tables (see Phase 10).
-6. **Next steps:** What you're asking the author to do, in what order, by when.
-
-See [references/EDITORIAL-REPORT-TEMPLATE.md](references/EDITORIAL-REPORT-TEMPLATE.md) for the full template.
-
-**On author communication:**
-> "You'll want to approach each editorial assignment with an open mind, striving for a personal understanding of the subject, and treating the author as a partner." — Norton
-
-Address the author's investment in their material. Show you understand why they made their choices before proposing alternatives. Never be dismissive of choices you'd make differently.
-
-**Deliverable:** A complete editorial report/letter, ready to send.
+1. **First read — no marking.** Understand the full shape of the piece as it currently exists.
+2. **Map the narrative arc.** Where is the Problem, Solution, Action? Is the arc intact?
+3. **Assess voice authority.** Read for Level of Address. Identify patterns and flag specific passages.
+4. **Read the skim-path.** Headers only. Does it cohere?
+5. **Evaluate modular flow.** Pacing by section. Transition gaps. Vignette placement.
+6. **Write all issues to `.agents/editorial-context.md`** in the format above.
+7. **Present a summary** of findings and offer the two resolution paths.
 
 ---
 
-### Phase 7: Rhythm
+## What Gets Written to the Context File
 
-**Goal:** Set the pace of the reading experience.
+Record the following in `.agents/editorial-context.md` after the diagnostic:
 
-Rhythm is the pattern of expansion and compression across the text — how long the book dwells on each idea before moving on. Poor rhythm is the most common problem in first drafts: chapters that sprint through important material and linger over minor points.
+- **Narrative arc status:** Where Problem, Solution, and Action are located; whether the arc is intact
+- **Voice authority calibration:** The dominant Level of Address failure mode, if any
+- **Skim-path verdict:** Whether the header sequence holds as a standalone argument
+- **Development issues list:** All findings in the `D[#]` format above
+- **What's working:** Sections where arc, voice, and flow are sound
 
-**Techniques:**
-- **Pacing map:** Chart pages spent on each concept against its structural importance. Mismatches show where compression or expansion is needed.
-- **Section breaks:** Adding or removing breaks changes felt pace dramatically. A break implies the reader should pause; removing one creates momentum.
-- **Opening and closing:** The opening paragraphs of each chapter set the reader's speed; the closing paragraphs signal release. Both deserve disproportionate attention.
-- **Rearranging the furniture:** Before cutting or adding, try moving passages. Material that feels slow in Chapter 3 may feel crisp in Chapter 1 or as an epilogue.
+Every issue must name a specific location. A finding without a location cannot be acted on.
 
-**When drafting new passages to model rhythm:**
-- Offer 2–3 alternatives at different tempos
-- Label each clearly: "faster version," "fuller version"
-- Explain what each does to the reader experience
-- Let the author choose
-
-**Diagnostic questions:**
-- Does each chapter move at a pace appropriate to the complexity of what it asks the reader to process?
-- Do openings set the chapter's speed? Do closings signal release?
-- Does the book's overall rhythm vary, or does every chapter move at the same speed?
-- Where does the reader most need to slow down and absorb? Is the text slowing down there?
+See [references/EDITORIAL-REPORT-TEMPLATE.md](references/EDITORIAL-REPORT-TEMPLATE.md) for the full report structure when producing a formal editorial report.
 
 ---
 
-### Phase 8: Transitions
+## What This Stage Is Not
 
-**Goal:** Fill cohesion gaps; stitch together drafts without erasing the author's voice.
-
-A clumsy transition announces the editor; a good one is invisible.
-
-**Types of cohesion gaps:**
-- **Logical gap:** The argument skips a step the reader needs to follow
-- **Tonal gap:** The register shifts without warning
-- **Temporal gap:** The narrative jumps in time without sufficient orientation
-- **Spatial gap:** The scene shifts without the reader knowing where they are
-- **Conceptual gap:** A new term or framework appears without introduction
-
-**Transition techniques:**
-- **Echo word:** Begin the new section with a key word from the end of the prior section
-- **Pivot sentence:** A single sentence that closes one idea and opens the next
-- **Explicit bridge:** A short transitional paragraph naming what just happened and where we're going (use sparingly; overuse reads as hand-holding)
-- **Section head:** A well-chosen heading can do the work of a transition
-
-**Working with stitched drafts:** When manuscripts have been assembled from separately written pieces (articles, talks, blog posts), check whether the underlying argument is continuous. A transition cannot patch a logical discontinuity.
-
-**Diagnostic questions:**
-- Can you follow the argument from paragraph to paragraph without rereading?
-- Where do you lose the thread? Is the problem a missing transition, or a missing argument?
-- Do section breaks land in the right places, or are they covering gaps that need actual content?
-- Is the author's voice present in the transitions, or have they gone generic?
+- It is not checking whether the thesis holds up — that belongs to editorial-structural
+- It is not rewriting sentences or improving prose — that belongs to editorial-line
+- It is not correcting grammar or style guide adherence — that belongs to editorial-copy
+- It is not fixing the logic of individual arguments — that belongs to editorial-structural
+- It does not produce a revised manuscript — it produces a report the author works from
 
 ---
-
-### Phase 9: Style
-
-**Goal:** Sentence-level editing that sharpens tone and deploys the full range of the author's rhetorical capacity.
-
-Style editing is not copyediting. You are not correcting errors; you are helping the author's prose do more of what it's trying to do. Work at the sentence level only after structure and argument are sound.
-
-**Tone Lapses** (see full table in [references/TONE-LAPSES.md](references/TONE-LAPSES.md)):
-
-| Lapse | Fix |
-|-------|-----|
-| Overwriting | Compress; cut any word that doesn't carry weight |
-| Condescension | Trust the reader; cut the gloss |
-| Overfamiliarity | Match register to context |
-| Passivity | Name the actor; use active verbs |
-| Inappropriate hedging | Distinguish genuine uncertainty from rhetorical timidity |
-| Register drift | Identify intended register; revise outliers |
-| Preach mode | Make the argument; trust the reader to draw conclusions |
-
-**Rhetorical Gestures** (see full table in [references/RHETORICAL-GESTURES.md](references/RHETORICAL-GESTURES.md)):
-
-| Gesture | Use |
-|---------|-----|
-| Analogy | Bridge unfamiliar concepts to familiar ones |
-| Irony | Create distance from received opinion; signal sophistication |
-| Metaphor | Compress complex ideas; make abstract material concrete |
-| Amplification | Accumulate force; build to a point |
-| Antithesis | Sharpen contrast; clarify what the author argues against |
-| Understatement | Control affect; let the reader supply the emotion |
-
-**Technique — Sentence Rewrite Protocol:**
-1. Identify the target sentence
-2. State what the sentence is trying to do (inform, persuade, create atmosphere, transition)
-3. Write 2–3 alternatives at different registers
-4. Annotate what each version trades off
-5. Recommend, but let the author choose
-
-**Stop-slop check:** When drafting model rewrites or any new prose during this phase, invoke the `stop-slop` skill if available. AI-generated prose tends toward the same patterns this skill is trying to eliminate — throat-clearing, inflated diction, passive constructions, false intimacy. Run stop-slop on any model passages before presenting them to the author.
-
-**Diagnostic questions:**
-- Is the author's voice consistent across the manuscript, or does it drift?
-- Where does the prose become flat? Is the problem weak verbs, over-qualification, or missing rhetorical gesture?
-- Does the author have characteristic strengths (a gift for analogy, a sharp ear for irony) that are being underused?
-
----
-
-### Phase 10: Display
-
-**Goal:** Ensure all displayed matter functions as part of the book's argument and is integrated into the reading experience.
-
-"Displayed matter" includes: chapter headings and subheadings, epigraphs, sidebars, pull quotes, illustrations, photographs, maps, diagrams, charts, tables, appendices, and notes.
-
-**The display test:** Every piece of displayed matter should pass a basic test — does it add something the running prose cannot provide efficiently? If the answer is no, cut it.
-
-**Chapter headings:**
-- A strong heading makes a claim, asks a question, or sets an atmosphere
-- Purely descriptive headings ("Chapter Three: The History of X") are missed opportunities
-- Heading series should have consistent grammar and register
-
-**Sidebars:**
-- Appropriate for material the interested reader will want but the general reader can skip
-- Risk: sidebars interrupt flow and can signal the author didn't trust their organizational choices
-- Each sidebar needs its own thesis, not just an accumulation of related facts
-
-**Illustrations, charts, tables:**
-- Every visual element should have a clear purpose stated in the caption
-- Captions should interpret, not merely describe ("Figure 3 shows the 40% drop in X that preceded the policy change in Chapter 5")
-- Charts and tables need to be legible at expected print size; flag for production when questionable
-
-**The display narrative:** Flip through the book looking only at displayed matter. Does it tell a coherent secondary story? A reader who only reads headings and looks at images should come away with the book's essential argument.
-
-**Diagnostic questions:**
-- Is every piece of displayed matter doing work the text cannot do more efficiently?
-- Does the heading system follow consistent logic and grammar?
-- Are captions interpretive, not merely descriptive?
-- Does the display sequence cohere as a secondary narrative?
-
----
-
-## Workflow: Proposal Assessment
-
-When working from a book proposal (before a full manuscript exists):
-
-1. **Phase 1 (Concept):** Assess whether the proposal has a clear central concept or is pulled in multiple directions. Identify the audience and list position. Produce a concept statement.
-2. **Phase 3 (Thesis):** Proposals typically include a thesis or hook — evaluate it and sharpen it. Develop working title options.
-3. **Phase 4 (Narrative):** Assess the proposed structure from the table of contents and chapter summaries. Flag any structural risks.
-4. **Phase 6 (Plan):** Write a proposal editorial report: what's working, what needs to be clarified or strengthened before acquisition, and what questions the proposal leaves unanswered.
-
-Skip Phase 2 (content map) — there isn't enough text. Defer Phases 5, 7–10 until a draft exists.
-
-## Workflow: Full Manuscript Assessment
-
-For a complete developmental editing engagement:
-
-1. **First read:** Read without marking. Get the whole.
-2. **Phases 1–3:** Articulate concept, map content, excavate thesis. Write a concept statement and thesis before proceeding.
-3. **Phases 4–5:** Determine narrative strategy and exposition structure. Produce content map and exposition map.
-4. **Phase 6:** Write the editorial report. Share with author and get agreement on the revision direction before proceeding.
-5. **Phases 7–10 (Close editorial pass):** These phases happen *after* the author has accepted the blueprint and done the structural revision. They represent the close content and line-edit collaboration: rhythm and transitions first, then style, then display. Do not begin these phases until the structural questions from Phase 6 are resolved.
-
-## Workflow: Targeted Intervention
-
-When asked to work on a specific aspect rather than the full manuscript, enter at the relevant phase. But always check: has the work of earlier phases been done? It is not possible to fix transitions (Phase 8) if the argument (Phase 5) is not yet sound.
-
-## Deliverable Reference
-
-| Phase | Deliverable |
-|-------|-------------|
-| Concept | Concept statement (1 paragraph) |
-| Content | Content map (paragraph per section + editorial notes) |
-| Thesis | Draft thesis statement + 3–5 working titles |
-| Narrative | Strategy recommendation + structural alternatives |
-| Exposition | Exposition map (1 sentence per chapter) |
-| Plan | Complete editorial report/letter |
-| Rhythm | Pacing notes + model passages (with alternatives) |
-| Transitions | Edited transitions + annotations |
-| Style | Sentence-level edits with alternatives and annotations |
-| Display | Display audit + caption revisions + heading revisions |
 
 ## References
 
-- [TONE-LAPSES.md](references/TONE-LAPSES.md) — Full tone lapse table (Norton Chapter 9)
-- [RHETORICAL-GESTURES.md](references/RHETORICAL-GESTURES.md) — Full rhetorical gestures table with deployment guidance
-- [PHASE-QUESTIONS.md](references/PHASE-QUESTIONS.md) — Comprehensive diagnostic questions for each phase
+- [TONE-LAPSES.md](references/TONE-LAPSES.md) — Full tone lapse table with diagnostic questions
+- [RHETORICAL-GESTURES.md](references/RHETORICAL-GESTURES.md) — Rhetorical gesture reference (used in editorial-line; available here for voice assessment)
 - [EDITORIAL-REPORT-TEMPLATE.md](references/EDITORIAL-REPORT-TEMPLATE.md) — Full editorial report template
 
 ## Companion Skills
 
-- **stop-slop** — Use during Phase 9 when drafting model rewrites or any new prose. Eliminates AI writing patterns before presenting work to the author.
+- **stop-slop** — When drafting any model passages to illustrate a point in the report, invoke stop-slop if available. Keep all model prose clean.
+
+---
+
+## Workflow Position
+
+This is stage 2 of 6 in the editorial workflow:
+1. **editorial-structural** — Thesis, concept, reverse outline, gap analysis *(do first)*
+2. **editorial-development** — Narrative arc, voice authority, modular flow *(you are here)*
+3. **editorial-line** — Sentence-level craft, word choice, rhythm *(do next)*
+4. **editorial-copy** — Grammar, punctuation, style guide adherence
+5. **editorial-typesetting** — Markdown to print-ready LaTeX
+6. **editorial-proof** — Final check of the typeset output
