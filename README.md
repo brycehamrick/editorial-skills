@@ -53,6 +53,17 @@ The editorial workflow is sequential. Each stage builds on the one before it. Do
                          └────────────┬────────────┘
                                       │
                           ┌───────────┴───────────┐
+                          │ (optional branch)      │
+                          ▼                        │
+              ┌─────────────────────┐              │
+              │ editorial-trans-    │              │
+              │     lation          │              │
+              │  Optional (4–5):    │              │
+              │  translate into     │              │
+              │  target language    │              │
+              └──────────┬──────────┘              │
+                         └──────────┬──────────────┘
+                          ┌─────────┴─────────────┐
                           │                       │
                           ▼                       ▼
               ┌─────────────────────┐   ┌──────────────────┐
@@ -95,6 +106,7 @@ Every skill also works standalone. You can run `/editorial-line` on a single cha
 | [editorial-development](skills/editorial-development/) | 2 | Narrative arc, voice authority, modular flow — chapter-level movement and readability |
 | [editorial-line](skills/editorial-line/) | 3 | Sentence-level craft, word choice, rhythm, persuasive impact |
 | [editorial-copy](skills/editorial-copy/) | 4 | Grammar, punctuation, style guide adherence, consistency throughout |
+| [editorial-translation](skills/editorial-translation/) | Optional (4–5) | Translation of finished nonfiction documents into any target language (default: Spanish). Optional step between copy editing and typesetting. |
 | [editorial-typesetting](skills/editorial-typesetting/) | 5 *(print books only)* | Converts markdown to print-ready LaTeX using memoir/XeLaTeX — trim size, margins, fonts, drop caps, running heads |
 | [latex-book](skills/latex-book/) | 5 companion | Print quality audit — font embedding, PDF/X compliance, widow penalties, compile log; quality gate before proof |
 | [editorial-proof](skills/editorial-proof/) | 6 | Final check after layout — orphans, widows, typos from layout, broken links |
@@ -308,7 +320,30 @@ The technical pass. Correctness and consistency by the rules of the applicable s
 
 **Deliverable:** Tracked changes in the document, a style sheet of decisions made, a brief note on recurring patterns, and flags for the author to resolve.
 
-**Do this after:** Line editing. **Before:** Proofreading.
+**Do this after:** Line editing. **Before:** Proofreading (or translation, if the document is being translated).
+
+---
+
+### editorial-translation — Optional step between stages 4 and 5
+
+Translates a finished, copy-edited nonfiction document into a target language while preserving the author's intent, voice, and readability. This is a production step — it delivers a translated document, not an issue list.
+
+**Covers:**
+- Content analysis — terminology extraction, tone assessment, figurative language mapping, structural challenges — before translation begins
+- Translation — full document or chunked for long documents (threshold: 4,000 words per chunk)
+- Quality check — non-Europeanization check, register consistency, idiomatic accuracy
+- Output — translated markdown file in a dated output directory
+
+**Default target language:** Spanish (`es`). Works for any language pair.
+
+**Codex opt-in:** By default, Claude performs the translation. If the `codex` skill is installed, you can opt in to using OpenAI's API for the translation pass instead.
+
+**Reference files:**
+- `ANALYSIS-WORKFLOW.md` — Eight content analysis sub-steps and full prompt templates for both analysis and translation
+- `EXTEND-SCHEMA.md` — Schema for the optional `EXTEND.md` preferences file (target language, style, glossary, chunk settings)
+- `STYLE-PRESETS.md` — Audience presets (general / technical / academic / business) and style presets (nine options; `elegant` is default for nonfiction)
+
+**Do this after:** Copy editing. **Before:** Typesetting (or directly to proof, for non-print documents). Only when translation is needed.
 
 ---
 

@@ -126,6 +126,7 @@ Once context is established, the editing workflow proceeds in this order:
 2. **editorial-development** — Big-picture structure, organization, tone
 3. **editorial-line** — Sentence-level craft, word choice, rhythm
 4. **editorial-copy** — Grammar, punctuation, style guide adherence
+   - **editorial-translation** — Optional: translate the copy-edited document into another language *(only when translation is needed)*
 5. **editorial-typesetting** — Markdown to print-ready LaTeX *(print books only — skip for essays, articles, and white papers)*
    - **latex-book** — Quality gate after typesetting; run before proceeding to proof
 6. **editorial-proof** — Final check of the typeset output; formatting artifacts only
