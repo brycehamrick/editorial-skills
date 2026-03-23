@@ -2,7 +2,7 @@
 
 ## Backlog
 
-### Phase 999.1: editorial-translation skill (BACKLOG)
+### Phase 999.1: editorial-translation skill (PLANNED)
 
 **Goal:** Build an `editorial-translation` skill for the editorial skills collection that translates nonfiction documents accurately into a target language while preserving intent, readability, and formatting. Primary use case is Spanish (to and from), but designed to work for any language pair.
 
@@ -13,8 +13,10 @@
 - Consider using the installed `codex` skill (OpenAI Codex CLI) to perform the actual translation, passing content via temp files in `.tmp/` rather than stdin/stdout (5000-word chunks fit within codex's input capacity)
 - Must follow all conventions in CLAUDE.md: frontmatter, context check, two-phase process, workflow position section, skill-creator use
 
-**Requirements:** TBD
-**Plans:** 0 plans
+**Requirements:** ET-SCRIPTS, ET-REFS, ET-SKILL, ET-INTEGRATION, D-01 through D-13
+**Plans:** 3 plans
 
 Plans:
-- [ ] TBD (promote with /gsd:review-backlog when ready)
+- [ ] 999.1-01-PLAN.md — Copy chunking scripts and create reference files (ANALYSIS-WORKFLOW, EXTEND-SCHEMA, STYLE-PRESETS)
+- [ ] 999.1-02-PLAN.md — Write SKILL.md implementing all 13 locked decisions
+- [ ] 999.1-03-PLAN.md — Update CLAUDE.md, README.md, editorial-context; sync to active skills; human verification
