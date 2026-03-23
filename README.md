@@ -165,6 +165,7 @@ Run the context skill first. It asks about the work, the audience, the style gui
 /editorial-development   ← Is it organized well? Is the tone right?
 /editorial-line          ← Is every sentence doing its job?
 /editorial-copy          ← Is it grammatically correct? Style guide compliant?
+/editorial-translation   ← (optional: translate into target language)
 /editorial-typesetting   ← Convert markdown to print-ready LaTeX
 /latex-book              ← Quality audit before proof (font embedding, PDF/X, widows)
 /editorial-proof         ← Final check of the typeset PDF
@@ -177,6 +178,7 @@ Run the context skill first. It asks about the work, the audience, the style gui
 /editorial-development   ← Is it organized well? Is the tone right?
 /editorial-line          ← Is every sentence doing its job?
 /editorial-copy          ← Is it grammatically correct? Style guide compliant?
+/editorial-translation   ← (optional: translate into target language)
 /editorial-proof         ← Final check before publishing
 ```
 
@@ -196,6 +198,9 @@ The skills work standalone. Invoke only what's relevant:
 
 "Check this against Chicago style"
 → Uses editorial-copy
+
+"Translate this into Spanish"
+→ Uses editorial-translation
 
 "Convert this to LaTeX for printing"
 → Uses editorial-typesetting
@@ -227,6 +232,9 @@ You: Tighten the prose in the opening section.
 
 You: Run a Chicago style pass on the full manuscript.
 → /editorial-copy reads the context, applies Chicago rules throughout
+
+You: Translate the manuscript into Spanish for the Latin American edition.
+→ /editorial-translation reads the context, translates the full document
 
 You: Convert the manuscript to print-ready LaTeX for KDP.
 → /editorial-typesetting generates the full memoir/XeLaTeX project
