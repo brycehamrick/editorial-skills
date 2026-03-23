@@ -9,10 +9,13 @@ This skill establishes the shared context for an editing engagement. It creates 
 
 ## Check for Existing Context
 
-Before asking questions, check whether `.agents/editorial-context.md` already exists.
+Before asking questions, check these sources in order:
 
-- **If it exists:** Read it, summarize what's there, and ask if anything needs to be updated for the current project or session.
-- **If it doesn't exist:** Work through the questions below to build it from scratch.
+1. **`PROJECT.md`** — If this file exists in the project root, read it first. It is the primary project context in GSD-managed projects and contains the project description, goals, audience, and scope. Treat it as authoritative and do not ask questions already answered there.
+2. **`.agents/editorial-context.md`** — If this file exists, read it. Summarize what's there and ask if anything needs to be updated for the current project or session.
+3. **Neither exists:** Work through the questions below to build context from scratch.
+
+When both files exist, merge them — `PROJECT.md` is the source of truth for project-level facts; `.agents/editorial-context.md` holds editorial-specific decisions (style guide, voice notes, issue history) that accumulate during editing.
 
 ## Context-Gathering Workflow
 
